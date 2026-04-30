@@ -4,14 +4,13 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from skills import SKILLS
 
-import spacy
-import subprocess
+import re
 
-try:
-    nlp = spacy.load("en_core_web_sm")
-except:
-    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
-    nlp = spacy.load("en_core_web_sm")
+def preprocess(text):
+    text = text.lower()
+    text = re.sub(r'[^a-zA-Z ]', ' ', text)
+    words = text.split()
+    return " ".join(words)
 
 def extract_text_from_pdf(file):
     text = ""

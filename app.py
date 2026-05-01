@@ -23,3 +23,5 @@ if uploaded_file and job_desc:
     st.write("Resume Skills:", resume_skills)
     st.write("Job Skills:", job_skills)
     st.write("Missing Skills:", gaps)
+if not job_skills:
+    st.warning("⚠️ No skills detected in job description")

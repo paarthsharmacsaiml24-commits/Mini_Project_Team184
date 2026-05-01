@@ -1,5 +1,6 @@
 SKILLS = [
     "python", "java", "c++", "sql", "machine learning",
     "deep learning", "excel", "power bi", "aws",
-    "docker", "html", "css", "javascript"
+    "docker", "html", "css", "javascript",
+    "react", "node", "flask", "django"
 ]

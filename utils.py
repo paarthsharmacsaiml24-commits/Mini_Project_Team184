@@ -25,11 +25,16 @@ def get_similarity(resume, job_desc):
     return round(score * 100, 2)
 
 def extract_skills(text):
+    text = text.lower()
     found = []
-    for skill in SKILLS:
-        if skill in text.lower():
-            found.append(skill)
-    return found
+
+    for skill, keywords in SKILL_MAP.items():
+        for keyword in keywords:
+            if keyword in text:
+                found.append(skill)
+                break
+
+    return list(set(found))
 
 def missing_skills(resume_skills, job_skills):
     return list(set(job_skills) - set(resume_skills))

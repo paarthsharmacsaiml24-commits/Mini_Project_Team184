@@ -1,6 +1,9 @@
-SKILLS = [
-    "python", "java", "c++", "sql", "machine learning",
-    "deep learning", "excel", "power bi", "aws",
-    "docker", "html", "css", "javascript",
-    "react", "node", "flask", "django"
-]
+SKILL_MAP = {
+    "python": ["python"],
+    "machine learning": ["machine learning", "ml", "aiml", "ai"],
+    "javascript": ["javascript", "js"],
+    "sql": ["sql", "mysql", "postgres"],
+    "html": ["html"],
+    "css": ["css"],
+    "java": ["java"]
+}

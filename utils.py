@@ -18,11 +18,6 @@ def extract_text_from_pdf(file):
             text += page.extract_text() or ""
     return text
 
-def preprocess(text):
-    doc = nlp(text.lower())
-    tokens = [token.lemma_ for token in doc if not token.is_stop and token.is_alpha]
-    return " ".join(tokens)
-
 def get_similarity(resume, job_desc):
     vectorizer = TfidfVectorizer()
     vectors = vectorizer.fit_transform([resume, job_desc])
